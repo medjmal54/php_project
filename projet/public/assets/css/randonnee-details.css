@@ -1,0 +1,136 @@
+/* randonnee-details.css — Detail page banner, info grid, booking card */
+
+.details-page { padding-top: 2.5rem; }
+
+.details-banner {
+  height: 400px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  padding: 2.5rem;
+  background-size: cover;
+  background-position: center;
+}
+.details-banner::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(1,38,31,0.9), transparent);
+}
+
+.details-overlay {
+  position: relative;
+  z-index: 10;
+  color: white;
+}
+.details-overlay h1 {
+  color: white;
+  font-family: var(--font-headline);
+  font-size: 3rem;
+  font-weight: 800;
+  margin: 0.625rem 0;
+  letter-spacing: -0.04em;
+}
+.details-overlay p { color: rgba(255,255,255,0.85); font-size: 1rem; }
+
+.r-badge {
+  display: inline-block;
+  background: rgba(197,234,223,0.2);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: white;
+  padding: 0.25rem 1rem;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.details-grid {
+  display: grid;
+  grid-template-columns: 1fr 350px;
+  gap: 2.5rem;
+  margin-top: 2.5rem;
+}
+@media (max-width: 900px) { .details-grid { grid-template-columns: 1fr; } }
+
+.details-card {
+  background: white;
+  padding: 1.875rem;
+  border-radius: var(--radius);
+  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+.details-card + .details-card { margin-top: 1.875rem; }
+.details-card h3 {
+  font-family: var(--font-headline);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+}
+.details-card p { color: var(--color-on-variant); line-height: 1.7; }
+
+.features-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  margin-top: 1.25rem;
+}
+.features-list li { display: flex; align-items: center; gap: 0.625rem; }
+.features-list i { color: var(--color-secondary); width: 1.25rem; height: 1.25rem; flex-shrink: 0; }
+.features-list strong { color: var(--color-primary); }
+
+/* Booking sidebar */
+.booking-card {
+  background: var(--color-primary);
+  color: white;
+  padding: 1.875rem;
+  border-radius: var(--radius);
+  position: sticky;
+  top: 7rem;
+}
+.booking-card h3 {
+  color: white;
+  font-family: var(--font-headline);
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+}
+.price-big { font-size: 3rem; font-weight: 800; margin-bottom: 1.25rem; font-family: var(--font-headline); }
+.price-big span { font-size: 1.2rem; font-weight: 400; }
+
+.booking-note { font-size: 0.8rem; color: rgba(255,255,255,0.65); margin-top: 0.9375rem; text-align: center; }
+
+.status-box { padding: 0.9375rem; border-radius: 0.625rem; text-align: center; font-weight: 600; }
+.status-box.accepted { background: #4caf50; color: white; }
+.status-box.pending  { background: #ff9800; color: white; }
+.status-box.refused  { background: #f44336; color: white; }
+
+.btn-book {
+  display: block;
+  width: 100%;
+  text-align: center;
+  background: var(--color-primary-fixed);
+  color: var(--color-primary);
+  padding: 1rem;
+  border-radius: var(--radius-full);
+  font-family: var(--font-headline);
+  font-weight: 700;
+  font-size: 1rem;
+  transition: background 0.2s;
+}
+.btn-book:hover { background: white; }
+
+.alert-danger {
+  background: #fef2f2;
+  border-left: 4px solid #ef4444;
+  padding: 0.625rem 0.9375rem;
+  border-radius: 0 0.5rem 0.5rem 0;
+  margin-bottom: 1rem;
+  font-size: 0.85rem;
+  color: #b91c1c;
+}
